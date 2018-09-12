@@ -8,8 +8,8 @@
 #include <st/stm32f103Xb.dtsi>
 
 / {
-	model = "STMicroelectronics STM32F103RB-NUCLEO board";
-	compatible = "st,stm32f103rb-nucleo", "st,stm32f103rb";
+	model = "STMicroelectronics STM32F103 bluepill board";
+	compatible = "st,bluepill", "st,stm32f103rb";
 
 	chosen {
 		zephyr,console = &usart2;
@@ -19,8 +19,8 @@
 
 	leds {
 		compatible = "gpio-leds";
-		green_led_2: led@0 {
-			gpios = <&gpioa 5 GPIO_INT_ACTIVE_HIGH>;
+		blue_led: led@0 {
+			gpios = <&gpioc 13 GPIO_INT_ACTIVE_LOW>;
 			label = "User LD2";
 		};
 	};
@@ -29,14 +29,34 @@
 		compatible = "gpio-keys";
 		user_button: button@0 {
 			label = "User";
-			gpios = <&gpioc 13 GPIO_INT_ACTIVE_LOW>;
+			gpios = <&gpiob 11 GPIO_INT_ACTIVE_LOW>;
 		};
 	};
 
 	aliases {
-		led0 = &green_led_2;
+		led0 = &blue_led;
 		sw0 = &user_button;
 	};
+
+	can1: can@40006400 {
+		compatible = "st,stm32-can";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		reg = <0x40006400 0x400>;
+		interrupts = <30 0>;
+		clocks = <&rcc STM32_CLOCK_BUS_APB1 0x02000000>;
+		status = "disabled";
+		label = "CAN_1";
+		bus-speed = <250000>;
+		sjw = <1>;
+		prop_seg_phase_seg1 = <5>;
+		phase_seg2 = <6>;
+	};
+
+};
+
+&can1 {
+	status = "ok";
 };
 
 &usart1 {

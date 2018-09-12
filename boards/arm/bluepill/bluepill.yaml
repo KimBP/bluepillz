@@ -1,5 +1,5 @@
-identifier: nucleo_f103rb
-name: NUCLEO-F103RB
+identifier: bluepill
+name: Blue Pill
 type: mcu
 arch: arm
 toolchain:
@@ -8,3 +8,4 @@ toolchain:
 ram: 20
 supported:
   - pwm
+  - can

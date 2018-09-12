@@ -1,79 +1,20 @@
-.. _nucleo_f103rb_board:
+.. _bluepill_stm32f103_board:
 
-ST Nucleo F103RB
-################
+ST BLUEPILL BOARD
+#################
 
 Overview
 ********
-The STM32 Nucleo-64 development board with STM32F103RB MCU, supports Arduino and ST morpho connectivity.
+See `bluepill wiki`_ for information
 
-The STM32 Nucleo board provides an affordable, and flexible way for users to try out new concepts,
-and build prototypes with the STM32 microcontroller, choosing from the various
-combinations of performance, power consumption, and features.
-
-The Arduino* Uno V3 connectivity support and the ST morpho headers allow easy functionality
-expansion of the STM32 Nucleo open development platform with a wide choice of
-specialized shields.
-
-The STM32 Nucleo board integrates the ST-LINK/V2-1 debugger and programmer.
-
-The STM32 Nucleo board comes with the STM32 comprehensive software HAL library together
-with various packaged software examples.
-
-.. image:: img/nucleo_f103rb_board.jpg
-   :width: 500px
-   :height: 367px
-   :align: center
-   :alt: Nucleo F103RB
-
-More information about the board can be found at the `Nucleo F103RB website`_.
 
 Hardware
 ********
-Nucleo F103RB provides the following hardware components:
-
-- STM32 microcontroller in QFP64 package
-- Two types of extension resources:
-
-  - Arduino* Uno V3 connectivity
-  - ST morpho extension pin headers for full access to all STM32 I/Os
-
-- ARM* mbed*
-- On-board ST-LINK/V2-1 debugger/programmer with SWD connector:
-
-  - Selection-mode switch to use the kit as a standalone ST-LINK/V2-1
-
-- Flexible board power supply:
-
-  - USB VBUS or external source (3.3V, 5V, 7 - 12V)
-  - Power management access point
-
-- Three LEDs:
-
-  - USB communication (LD1), user LED (LD2), power LED (LD3)
-
-- Two push-buttons: USER and RESET
-- USB re-enumeration capability. Three different interfaces supported on USB:
-
-  - Virtual COM port
-  - Mass storage
-  - Debug port
-
-- Support of wide choice of Integrated Development Environments (IDEs) including:
-
-  - IAR
-  - ARM Keil
-  - GCC-based IDEs
-
-More information about STM32F103RB can be found here:
-
-- `STM32F103 reference manual`_
-- `STM32F103 data sheet`_
 
 Supported Features
 ==================
 
-The Zephyr nucleo_f103rb board configuration supports the following hardware features:
+The Zephyr bluepill board configuration supports the following hardware features:
 
 +-----------+------------+-------------------------------------+
 | Interface | Controller | Driver/Component                    |
@@ -97,7 +38,7 @@ The Zephyr nucleo_f103rb board configuration supports the following hardware fea
 Other hardware features are not yet supported in this Zephyr port.
 
 The default configuration can be found in the defconfig file:
-``boards/arm/nucleo_f103rb/nucleo_f103rb_defconfig``
+``boards/arm/bluepill/bluepill_defconfig``
 
 Connections and IOs
 ===================
@@ -109,14 +50,13 @@ capable except for analog inputs.
 
 Board connectors:
 -----------------
-.. image:: img/nucleo_f103rb_connectors.png
-   :width: 800px
-   :align: center
-   :height: 619px
-   :alt: Nucleo F103RB connectors
+XXX TO come
 
 Default Zephyr Peripheral Mapping:
 ----------------------------------
+
+XXXXX To be changed
+
 
 - UART_1_TX : PA9
 - UART_1_RX : PA10
@@ -125,50 +65,15 @@ Default Zephyr Peripheral Mapping:
 
 For mode details please refer to `STM32 Nucleo-64 board User Manual`_.
 
-Programming and Debugging
-*************************
 
-Applications for the ``nucleo_f103rb`` board configuration can be built and
-flashed in the usual way (see :ref:`build_an_application` and
-:ref:`application_run` for more details).
-
-Flashing
-========
-
-Nucleo F103RB board includes an ST-LINK/V2-1 embedded debug tool interface.
-This interface is supported by the openocd version included in the Zephyr SDK.
-
-Flashing an application to Nucleo F103RB
-----------------------------------------
-
-Here is an example for the :ref:`blinky-sample` application.
-
-.. zephyr-app-commands::
-   :zephyr-app: samples/basic/blinky
-   :board: nucleo_f103rb
-   :goals: build flash
-
-You will see the LED blinking every second.
-
-Debugging
-=========
-
-You can debug an application in the usual way.  Here is an example for the
-:ref:`blinky-sample` application.
-
-.. zephyr-app-commands::
-   :zephyr-app: samples/basic-blinky
-   :board: nucleo_f103rb
-   :maybe-skip-config:
-   :goals: debug
 
 References
 **********
 
 .. target-notes::
 
-.. _Nucleo F103RB website:
-   http://www.st.com/en/evaluation-tools/nucleo-f103rb.html
+.. _bluepill wiki:
+   https://wiki.stm32duino.com/index.php?title=Blue_Pill
 
 .. _STM32F103 reference manual:
    http://www.st.com/resource/en/reference_manual/cd00171190.pdf
@@ -176,5 +81,3 @@ References
 .. _STM32F103 data sheet:
    http://www.st.com/resource/en/datasheet/stm32f103rb.pdf
 
-.. _STM32 Nucleo-64 board User Manual:
-   http://www.st.com/resource/en/user_manual/dm00105823.pdf

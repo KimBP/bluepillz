@@ -1,14 +1,14 @@
-# Kconfig - NUCLEO-64 F103RB board configuration
+# Kconfig - STM32F103 Blue Pill board configuration
 #
 # Copyright (c) 2016 Open-RnD Sp. z o.o.
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-if BOARD_NUCLEO_F103RB
+if BOARD_BLUE_PILL
 
 config BOARD
-	default "nucleo_f103rb"
+	default "bluepill"
 
 if UART_CONSOLE
 
@@ -34,4 +34,4 @@ config SPI_2
 
 endif
 
-endif # BOARD_NUCLEO_F103RB
+endif # BOARD_BLUE_PILL
